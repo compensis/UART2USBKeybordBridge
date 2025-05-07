@@ -32,8 +32,10 @@ This is a [PlatformIO](https://platformio.org/) based Arduino project that turns
 
 3. Connect your Arduino board and upload the firmware:
     ```bash
-    pio run --target upload
+    pio run --environment micro --target upload
     ```
+
+    **Note:** Replace `micro` with the appropriate environment name from the [platformio.ini](platformio.ini) file if you are using a different board. For example, use `leonardo` for an Arduino Leonardo or another environment defined in the configuration.
 
 ## 🔌 How It Works
 
