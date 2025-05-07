@@ -30,7 +30,16 @@ This is a [PlatformIO](https://platformio.org/) based Arduino project that turns
     code .
     ```
 
-3. Connect your Arduino board and upload the firmware:
+3. (Optional) Adjust the keyboard layout:\
+    Open the [platformio.ini](platformio.ini) file and modify the `build_flags` section to set your desired keyboard layout. For example:
+    ```ini
+    build_flags =
+        -D HID_CUSTOM_LAYOUT
+        -D LAYOUT_GERMAN_MAC
+    ```
+    Replace `LAYOUT_GERMAN_MAC` with the desired layout from the [HID-Project library](https://github.com/NicoHood/HID/blob/master/src/KeyboardLayouts/ImprovedKeylayouts.h).
+
+4. Connect your Arduino board and upload the firmware:
     ```bash
     pio run --environment micro --target upload
     ```
