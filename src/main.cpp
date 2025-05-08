@@ -23,12 +23,14 @@ public:
 
 DelayedKeyboard USBKeyboard;
 
+HardwareSerial& inputSerial = Serial1;
+
 void setup() {
   // Sends a clean report to the host. This is important on any Arduino type.
   USBKeyboard.begin();
   
   // Open the hardware UART port
-  Serial1.begin(115200);
+  inputSerial.begin(115200);
 }
 
 void loop() {
@@ -41,9 +43,9 @@ void loop() {
   }
 
   // Check for incoming serial data
-  if (Serial1.available() > 0) {
+  if (inputSerial.available() > 0) {
     // read incoming serial data
-    char inChar = Serial1.read(); 
+    char inChar = inputSerial.read(); 
 
     if (inChar == '\r') {
       USBKeyboard.tap(KEY_ENTER);
@@ -55,6 +57,6 @@ void loop() {
     }
 
     // Indicate that the character was sent
-    Serial1.write('*');
+    inputSerial.write('*');
   }
 }
