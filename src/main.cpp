@@ -19,9 +19,7 @@ public:
     }
     return ret;
   }
-};
-
-DelayedKeyboard USBKeyboard;
+} USBKeyboard;
 
 HardwareSerial& inputSerial = Serial1;
 
