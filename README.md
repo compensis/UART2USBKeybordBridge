@@ -8,6 +8,12 @@ This is a [PlatformIO](https://platformio.org/) based Arduino project that turns
 - Listens for characters on the hardware UART interface
 - Sends received characters as individual keypresses
 
+## ❓ Why This Project Was Created
+
+I am using a [JetKVM](https://jetkvm.com/) connected to a Mac mini from 2012. Unfortunately, during the boot process of the Mac mini, the virtual USB keyboard provided by the JetKVM is not recognized when entering the FileVault password. 
+
+To work around this issue, I use a SparkFun Pro Micro with the code from this repository. It is connected to the [extension port](https://jetkvm.com/docs/peripheral-devices/extension-port) of the JetKVM and is recognized by the Mac mini as a USB keyboard. Through the Serial Console Extension in the JetKVM web interface, I can then input the FileVault password successfully.
+
 ## 🛠 Requirements
 
 - A microcontroller board with native USB support, such as:
